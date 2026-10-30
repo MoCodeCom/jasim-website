@@ -30,7 +30,7 @@ titles or details. So in `src/app/content/works.ts`:
 - **Media** (oil, watercolour, mixed) are judged by eye from the images. The filter on the works
   page depends on them.
 - **Years** appear only where one can be read beside the signature: 2005, 2013, 2016, 2018 and 2020.
-- **"Portrait of a Man" (2013)** may be a self-portrait. Please confirm.
+- **"Picture of Jasim Alfadhel" (2013)** is the title given by the site owner.
 - **"Profile with Horses"** is signed "Jasim Al Fadil", which may help settle the English spelling.
 - **"Woman from Behind"** shows a bare back. Please check the family is happy to include it; it is
   last in the list and does not appear on the home page.

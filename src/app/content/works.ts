@@ -57,7 +57,7 @@ export const WORKS: Work[] = [
   work('old-man-in-turban', 'Old Man in a Purple Turban', 'شيخ بعمامة بنفسجية', 'watercolour', 985, 1103, 2005),
   work('rain-street', 'Street in the Rain', 'شارع تحت المطر', 'watercolour', 669, 985),
   work('veiled-rider', 'Veiled Rider and White Horse', 'فارس ملثم وحصان أبيض', 'oil', 1280, 960),
-  work('portrait-of-a-man', 'Portrait of a Man', 'صورة رجل', 'oil', 985, 1181, 2013),
+  work('picture-of-jasim-alfadhel', 'Picture of Jasim Alfadhel', 'صورة جاسم الفضل', 'oil', 985, 1181, 2013),
   work('bridge-and-bus', 'Bus on the Bridge', 'حافلة على الجسر', 'watercolour', 1280, 861, 2016),
   work('riders', 'Riders', 'فرسان', 'oil', 1280, 959),
   work('boy-with-reeds', 'Boy with Reeds and Sickle', 'صبي مع القصب والمنجل', 'watercolour', 1280, 861),
