@@ -19,6 +19,7 @@ svg {
 :host(.cover) svg {
   height: 100%;
   object-fit: cover;
+  object-position: var(--focus, center);
 }
 
 .tag {

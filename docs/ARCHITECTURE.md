@@ -78,8 +78,8 @@ Its logo, images and proprietary fonts are not used.
 Everything below is in `src/app/content/site.ts` or `works.ts` unless noted.
 
 - [ ] Have the family check the biography and the open questions in `docs/CONTENT-SOURCES.md`
-- [ ] Get permission to publish the paintings and photographs
-- [ ] Replace the sample works: add `image`, real titles, and remove `sample: true`
+- [ ] Confirm permission to publish the paintings
+- [ ] Replace the descriptive titles and add real titles, materials and dimensions
 - [ ] Add exhibition dates and any missing shows
 - [ ] Set `email`, `url` and social links
 - [ ] Add a favicon (`public/favicon.ico`) and a sharing image

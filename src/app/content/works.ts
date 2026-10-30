@@ -1,6 +1,6 @@
 import { Localized } from './site';
 
-export type Medium = 'painting' | 'drawing' | 'mixed';
+export type Medium = 'oil' | 'watercolour' | 'mixed';
 
 export interface Work {
   slug: string;
@@ -9,7 +9,7 @@ export interface Work {
   /** Width and height of the piece or its photo; sets the display shape. */
   width: number;
   height: number;
-  /** Path under public/, for example works/river.jpg. */
+  /** Path under public/, for example artworks/river.jpg. */
   image?: string;
   year?: number;
   materials?: Localized;
@@ -19,34 +19,52 @@ export interface Work {
   sample?: boolean;
 }
 
-const sample = (
-  index: number,
+const work = (
+  slug: string,
+  en: string,
+  ar: string,
   medium: Medium,
   width: number,
   height: number,
-): Work => {
-  const number = String(index).padStart(2, '0');
-  const arabicNumber = number.replace(/\d/g, (d) => '٠١٢٣٤٥٦٧٨٩'[Number(d)]);
-  return {
-    slug: `sample-${number}`,
-    title: { en: `Sample work ${number}`, ar: `عمل تجريبي ${arabicNumber}` },
-    medium,
-    width,
-    height,
-    sample: true,
-  };
-};
+  year?: number,
+): Work => ({
+  slug,
+  title: { en, ar },
+  medium,
+  width,
+  height,
+  image: `artworks/${slug}.jpg`,
+  year,
+});
 
+/**
+ * The home page uses this order: first work in the opening panel, second in the works panel,
+ * and the next three under "Selected works".
+ *
+ * Titles describe each painting and media are judged from the images; see docs/CONTENT-SOURCES.md.
+ */
 export const WORKS: Work[] = [
-  sample(1, 'painting', 4, 5),
-  sample(2, 'painting', 5, 4),
-  sample(3, 'drawing', 3, 4),
-  sample(4, 'mixed', 1, 1),
-  sample(5, 'painting', 3, 4),
-  sample(6, 'drawing', 4, 3),
-  sample(7, 'mixed', 4, 5),
-  sample(8, 'painting', 1, 1),
-  sample(9, 'drawing', 5, 4),
+  work('reed-boat', 'Reed Boat in the Marshes', 'قارب القصب في الأهوار', 'oil', 1280, 960, 2020),
+  work('market-woman', 'Woman at the Market', 'امرأة في السوق', 'oil', 1280, 1024, 2018),
+  work('mother-and-child', 'Mother and Child', 'أم وطفلها', 'watercolour', 1280, 861),
+  work('boat-and-palms', 'Boat and Palms', 'قارب ونخيل', 'watercolour', 861, 1280, 2018),
+  work('man-with-camels', 'Man with Camels', 'رجل مع الجمال', 'watercolour', 1280, 960),
+  work('three-horses', 'Three Horses', 'ثلاثة خيول', 'oil', 1280, 1024),
+  work('profile-with-horses', 'Profile with Horses', 'وجه جانبي وخيول', 'mixed', 1280, 1280),
+  work('old-street', 'Old Street with Wooden Balconies', 'زقاق قديم بشرفات خشبية', 'oil', 1024, 1280),
+  work('horses-at-camp', 'Horses at the Camp', 'خيول عند المخيم', 'oil', 1280, 1024),
+  work('rider-and-white-horse', 'Rider and White Horse', 'فارس وحصان أبيض', 'oil', 1280, 1024),
+  work('old-man-in-turban', 'Old Man in a Purple Turban', 'شيخ بعمامة بنفسجية', 'watercolour', 985, 1103, 2005),
+  work('rain-street', 'Street in the Rain', 'شارع تحت المطر', 'watercolour', 669, 985),
+  work('veiled-rider', 'Veiled Rider and White Horse', 'فارس ملثم وحصان أبيض', 'oil', 1280, 960),
+  work('portrait-of-a-man', 'Portrait of a Man', 'صورة رجل', 'oil', 985, 1181, 2013),
+  work('bridge-and-bus', 'Bus on the Bridge', 'حافلة على الجسر', 'watercolour', 1280, 861, 2016),
+  work('riders', 'Riders', 'فرسان', 'oil', 1280, 959),
+  work('boy-with-reeds', 'Boy with Reeds and Sickle', 'صبي مع القصب والمنجل', 'watercolour', 1280, 861),
+  work('seated-old-man', 'Old Man in a Doorway', 'شيخ عند المدخل', 'watercolour', 861, 1280),
+  work('chasing-the-white-horse', 'Chasing the White Horse', 'مطاردة الحصان الأبيض', 'oil', 1280, 959),
+  work('fruit-seller', 'The Fruit Seller', 'بائع الفاكهة', 'watercolour', 884, 1280),
+  work('woman-from-behind', 'Woman from Behind', 'امرأة من الخلف', 'oil', 959, 1280),
 ];
 
-export const MEDIUMS: Medium[] = ['painting', 'drawing', 'mixed'];
+export const MEDIUMS: Medium[] = ['oil', 'watercolour', 'mixed'];

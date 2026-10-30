@@ -7,7 +7,41 @@
 }
 
 .art-panel {
+  overflow: hidden;
   background: var(--ink);
+}
+
+/* The minimum zoom leaves enough spare image that the circle never exposes an edge. */
+.moving {
+  --focus: 74% 50%;
+  animation:
+    circle 36s linear infinite,
+    zoom 18s ease-in-out infinite alternate;
+  will-change: transform, scale;
+}
+
+@keyframes circle {
+  from {
+    transform: rotate(0deg) translateX(3%) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(3%) rotate(-360deg);
+  }
+}
+
+@keyframes zoom {
+  from {
+    scale: 1.12;
+  }
+  to {
+    scale: 1.26;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .moving {
+    animation: none;
+  }
 }
 
 /* Keeps white headlines readable over any artwork. */
@@ -40,6 +74,10 @@
 .lede {
   margin-block: 1.25rem 0;
   font-size: clamp(1.1rem, 2vw, 1.5rem);
+}
+
+.name {
+  white-space: nowrap;
 }
 
 .statement {

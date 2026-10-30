@@ -1,8 +1,8 @@
 <section class="panel on-dark art-panel">
-  <app-artwork [work]="featured" [cover]="true" [eager]="true" />
+  <app-artwork class="moving" [work]="featured" [cover]="true" [eager]="true" />
   <div class="wrap content top">
     <h1>{{ language.pick(site.name) }}</h1>
-    <p class="lede">{{ language.pick(site.role) }} · {{ otherName() }}</p>
+    <p class="lede">{{ language.pick(site.role) }} · <span class="name">{{ otherName() }}</span></p>
   </div>
 </section>
 
