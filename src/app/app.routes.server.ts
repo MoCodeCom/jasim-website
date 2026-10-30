@@ -18,5 +18,6 @@ export const serverRoutes: ServerRoute[] = [
   { path: ':lang/about', renderMode: RenderMode.Prerender, getPrerenderParams: languageParams },
   { path: ':lang/exhibitions', renderMode: RenderMode.Prerender, getPrerenderParams: languageParams },
   { path: ':lang/contact', renderMode: RenderMode.Prerender, getPrerenderParams: languageParams },
-  { path: '**', renderMode: RenderMode.Server, status: 404 },
+  // Unknown addresses are served by 404.html, which the deploy workflow copies from index.csr.html.
+  { path: '**', renderMode: RenderMode.Client },
 ];

@@ -14,9 +14,7 @@ content files (src/app/content)
         |
 Angular 21 build ---> prerendered HTML + JS + fonts
         |
-Express server (src/server.ts): static files, 404 rendering
-        |
-CDN (recommended) ---> visitors
+GitHub Pages (.github/workflows/deploy.yml) ---> visitors
 ```
 
 There is no database, login or admin area. Content changes are made in version-controlled
@@ -46,7 +44,9 @@ replacing the content files with API calls; the page components would not need t
 | `/{en,ar}/exhibitions` | Exhibition history |
 | `/{en,ar}/contact` | Enquiry form |
 
-All known URLs are prerendered. Anything else is rendered on the server with a 404 status.
+All known URLs are prerendered. Anything else gets `404.html`, which shows the not-found page in the browser.
+
+`src/server.ts` is not used on GitHub Pages. It stays in the repository in case the site moves to a Node host.
 
 ## Key decisions
 
@@ -75,7 +75,7 @@ Its logo, images and proprietary fonts are not used.
 
 ## Launch checklist
 
-Everything below is in `src/app/content/site.ts` or `works.ts` unless noted.
+Most of this is in `src/app/content/site.ts` or `works.ts` unless noted.
 
 - [ ] Have the family check the biography and the open questions in `docs/CONTENT-SOURCES.md`
 - [ ] Confirm permission to publish the paintings
@@ -84,4 +84,3 @@ Everything below is in `src/app/content/site.ts` or `works.ts` unless noted.
 - [ ] Set `url` and social links
 - [ ] Add a sharing image
 - [ ] Set `launched: true` (this removes the `noindex` tag)
-- [ ] Add the production domain to `security.allowedHosts` in `angular.json`

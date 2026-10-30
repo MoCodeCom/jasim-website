@@ -3,9 +3,9 @@
   "configurations": [
     {
       "name": "site",
-      "runtimeExecutable": "node",
-      "runtimeArgs": ["dist/jasim-website/server/server.mjs"],
-      "port": 4000
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start"],
+      "port": 4200
     }
   ]
 }
