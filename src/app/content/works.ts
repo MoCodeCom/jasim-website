@@ -38,8 +38,8 @@ const work = (
 });
 
 /**
- * The home page uses this order: first work in the opening panel, second in the works panel,
- * and the next three under "Selected works".
+ * The home page uses this order: first work in the opening panel, and the third to fifth under
+ * "Selected works".
  *
  * Titles describe each painting and media are judged from the images; see docs/CONTENT-SOURCES.md.
  */

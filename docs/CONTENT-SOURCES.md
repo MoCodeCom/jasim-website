@@ -16,7 +16,7 @@ record is thin, and these sources were not written as reference works.
 - **Degree:** one source says the College of Fine Arts in Baghdad, another says the University of
   Basra. The site names no city.
 - **Age:** one source says about 68; others say 67, which the site uses.
-- **English spelling:** sources vary (Al-Fadl, Alfadhel, Alfathel). The site uses "Jasim AlFadhel".
+- **English spelling:** the site uses "Jasim Alfadhel", as chosen by the site owner. Sources vary (Al-Fadl, Alfathel).
 - **Retrospective year:** 2026 is inferred from the article's date. The first retrospective's
   details were not found.
 - **Rights:** who holds the copyright to the paintings and photographs, and who should receive enquiries.
@@ -34,3 +34,8 @@ titles or details. So in `src/app/content/works.ts`:
 - **"Profile with Horses"** is signed "Jasim Al Fadil", which may help settle the English spelling.
 - **"Woman from Behind"** shows a bare back. Please check the family is happy to include it; it is
   last in the list and does not appear on the home page.
+
+## Artist photo
+
+`public/artist.png` was supplied by the site owner. It is only about 200 pixels wide, so it suits
+small display; please confirm who took it and whether a larger original exists.

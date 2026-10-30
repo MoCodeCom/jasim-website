@@ -2,15 +2,24 @@
   <app-artwork class="moving" [work]="featured" [cover]="true" [eager]="true" />
   <div class="wrap content top">
     <h1>{{ language.pick(site.name) }}</h1>
-    <p class="lede">{{ language.pick(site.role) }} · <span class="name">{{ otherName() }}</span></p>
+    <p class="lede">{{ language.pick(site.role) }} · {{ language.pick(site.life) }} · <span class="name">{{ otherName() }}</span></p>
   </div>
 </section>
 
-<section class="panel on-dark art-panel">
-  <app-artwork [work]="promo" [cover]="true" />
+<section class="panel works-panel">
   <div class="wrap content bottom">
-    <h2>{{ language.ui().works }}</h2>
-    <a class="button" [routerLink]="language.link('works')"><span>{{ language.ui().viewAll }}</span></a>
+    <a class="artist" [routerLink]="language.link('about')">
+      <img src="artist.png" [alt]="language.pick(site.name)" width="200" height="186" />
+      <span>
+        <strong>{{ language.pick(site.name) }}</strong>
+        <br />
+        {{ language.pick(site.role) }}
+      </span>
+    </a>
+    <div class="works-heading">
+      <h2>{{ language.ui().works }}</h2>
+      <a class="button" [routerLink]="language.link('works')"><span>{{ language.ui().viewAll }}</span></a>
+    </div>
   </div>
 </section>
 

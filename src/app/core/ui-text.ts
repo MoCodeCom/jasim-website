@@ -47,11 +47,11 @@ const en = {
   notFoundTitle: 'Page not found',
   notFoundText: 'This page doesn’t exist or may have moved.',
   backHome: 'Back to home',
-  metaHome: 'The life and work of Jasim AlFadhel (1955–2022), Iraqi painter from Basra.',
-  metaWorks: 'Browse works by Jasim AlFadhel.',
-  metaAbout: 'The biography of the Iraqi painter Jasim AlFadhel.',
-  metaExhibitions: 'Exhibition history of Jasim AlFadhel.',
-  metaContact: 'Enquiries about the work of Jasim AlFadhel.',
+  metaHome: 'The life and work of Jasim Alfadhel (1955–2022), Iraqi visual artist from Basra.',
+  metaWorks: 'Browse works by Jasim Alfadhel.',
+  metaAbout: 'The biography of the Iraqi visual artist Jasim Alfadhel.',
+  metaExhibitions: 'Exhibition history of Jasim Alfadhel.',
+  metaContact: 'Enquiries about the work of Jasim Alfadhel.',
 };
 
 const ar: typeof en = {
@@ -100,9 +100,9 @@ const ar: typeof en = {
   notFoundTitle: 'الصفحة غير موجودة',
   notFoundText: 'هذه الصفحة غير موجودة أو ربما نُقلت.',
   backHome: 'العودة إلى الرئيسية',
-  metaHome: 'حياة وأعمال جاسم الفضل (1955–2022)، الرسام العراقي من البصرة.',
+  metaHome: 'حياة وأعمال جاسم الفضل (1955–2022)، الفنان التشكيلي العراقي من البصرة.',
   metaWorks: 'تصفح أعمال جاسم الفضل.',
-  metaAbout: 'السيرة الذاتية للرسام العراقي جاسم الفضل.',
+  metaAbout: 'السيرة الذاتية للفنان التشكيلي العراقي جاسم الفضل.',
   metaExhibitions: 'سجل معارض جاسم الفضل.',
   metaContact: 'استفسارات عن أعمال جاسم الفضل.',
 };

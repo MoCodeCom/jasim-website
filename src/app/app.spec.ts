@@ -25,7 +25,7 @@ describe('App', () => {
 
   it('renders English pages left to right', async () => {
     const page = await open('/en');
-    expect(page.querySelector('h1')?.textContent).toContain('Jasim AlFadhel');
+    expect(page.querySelector('h1')?.textContent).toContain('Jasim Alfadhel');
     expect(document.documentElement.getAttribute('dir')).toBe('ltr');
   });
 

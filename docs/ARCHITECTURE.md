@@ -1,4 +1,4 @@
-# Jasim AlFadhel website: architecture
+# Jasim Alfadhel website: architecture
 
 ## Goals
 

@@ -20,7 +20,6 @@ export class Home {
 
   protected readonly site = SITE;
   protected readonly featured = WORKS[0];
-  protected readonly promo = WORKS[1];
   protected readonly selected = WORKS.slice(2, 5);
   protected readonly otherName = computed(() => {
     const other: Lang = this.language.current() === 'ar' ? 'en' : 'ar';

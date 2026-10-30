@@ -6,8 +6,9 @@ export type Localized = Record<Lang, string>;
  * checklist and docs/CONTENT-SOURCES.md for where each biographical fact comes from.
  */
 export const SITE = {
-  name: { en: 'Jasim AlFadhel', ar: 'جاسم الفضل' } as Localized,
-  role: { en: 'Iraqi painter · Basra, 1955–2022', ar: 'رسام عراقي · البصرة، ١٩٥٥–٢٠٢٢' } as Localized,
+  name: { en: 'Jasim Alfadhel', ar: 'جاسم الفضل' } as Localized,
+  role: { en: 'Iraqi visual artist', ar: 'الفنان التشكيلي العراقي' } as Localized,
+  life: { en: 'Basra, 1955–2022', ar: 'البصرة، ١٩٥٥–٢٠٢٢' } as Localized,
 
   /** Production address, for example https://example.com (no trailing slash). */
   url: '',
@@ -23,7 +24,7 @@ export const SITE = {
   } as Localized,
   biography: [
     {
-      en: 'Jasim Mohammed AlFadhel was born in Basra, Iraq, in 1955. He graduated from the Institute of Fine Arts and went on to earn a degree from the College of Fine Arts.',
+      en: 'Jasim Mohammed Alfadhel was born in Basra, Iraq, in 1955. He graduated from the Institute of Fine Arts and went on to earn a degree from the College of Fine Arts.',
       ar: 'ولد جاسم محمد الفضل في البصرة بالعراق عام 1955. تخرج في معهد الفنون الجميلة، ثم نال شهادته من كلية الفنون الجميلة.',
     },
     {
