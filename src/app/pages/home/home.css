@@ -1,0 +1,109 @@
+.panel {
+  display: flex;
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  color: #ffffff;
+}
+
+.art-panel {
+  background: var(--ink);
+}
+
+/* Keeps white headlines readable over any artwork. */
+.art-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 0.3);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding-block: 2rem;
+}
+
+.top {
+  padding-block-start: clamp(5.5rem, 9vw, 7rem);
+}
+
+.bottom {
+  align-self: flex-end;
+  padding-block-end: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.bottom h2 {
+  margin-block-end: 1.5rem;
+}
+
+.lede {
+  margin-block: 1.25rem 0;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+}
+
+.statement {
+  align-items: center;
+  background: var(--teal);
+}
+
+.quote {
+  max-width: 22em;
+  margin-block: 1rem 2rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4.5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.highlights {
+  padding-block: clamp(4rem, 9vw, 8rem);
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.highlights h2 {
+  margin-block-end: clamp(2rem, 5vw, 4rem);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+.cards {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  background: var(--mint);
+}
+
+.cards .grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(12rem, 24vw, 22rem);
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  border: 1px solid var(--ink);
+  text-decoration: none;
+}
+
+.card:hover {
+  background: var(--ink);
+  color: var(--mint);
+}
+
+.card h2 {
+  font-size: clamp(1.75rem, 3.5vw, 3.5rem);
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .grid,
+  .cards .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

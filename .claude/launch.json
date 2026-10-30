@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["dist/jasim-website/server/server.mjs"],
+      "port": 4000
+    }
+  ]
+}

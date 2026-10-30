@@ -1,0 +1,45 @@
+<section class="panel on-dark art-panel">
+  <app-artwork [work]="featured" [cover]="true" [eager]="true" />
+  <div class="wrap content top">
+    <h1>{{ language.pick(site.name) }}</h1>
+    <p class="lede">{{ language.pick(site.role) }} · {{ otherName() }}</p>
+  </div>
+</section>
+
+<section class="panel on-dark art-panel">
+  <app-artwork [work]="promo" [cover]="true" />
+  <div class="wrap content bottom">
+    <h2>{{ language.ui().works }}</h2>
+    <a class="button" [routerLink]="language.link('works')"><span>{{ language.ui().viewAll }}</span></a>
+  </div>
+</section>
+
+<section class="panel on-dark statement">
+  <div class="wrap content">
+    <p class="label">{{ language.ui().statement }}</p>
+    <p class="quote">{{ language.pick(site.statement) }}</p>
+    <a class="button" [routerLink]="language.link('about')"><span>{{ language.ui().about }}</span></a>
+  </div>
+</section>
+
+<section class="highlights on-dark">
+  <div class="wrap">
+    <h2>{{ language.ui().selected }}</h2>
+    <div class="grid">
+      @for (work of selected; track work.slug) {
+        <app-work-card [work]="work" />
+      }
+    </div>
+  </div>
+</section>
+
+<section class="cards">
+  <div class="wrap grid">
+    <a class="card" [routerLink]="language.link('exhibitions')">
+      <h2>{{ language.ui().exhibitions }}</h2>
+    </a>
+    <a class="card" [routerLink]="language.link('contact')">
+      <h2>{{ language.ui().contact }}</h2>
+    </a>
+  </div>
+</section>

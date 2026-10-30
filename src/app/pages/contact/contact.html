@@ -1,0 +1,44 @@
+<div class="page-head">
+  <div class="wrap">
+    <h1>{{ language.ui().contact }}</h1>
+  </div>
+</div>
+
+<div class="wrap page narrow">
+  <p>{{ language.ui().contactIntro }}</p>
+
+  @if (!site.email) {
+    <p class="notice" role="status">{{ language.ui().contactUnavailable }}</p>
+  }
+
+  <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+    <label for="name">{{ language.ui().yourName }}</label>
+    <input id="name" formControlName="name" autocomplete="name" [attr.aria-invalid]="showError('name')" />
+    @if (showError('name')) {
+      <p class="error">{{ language.ui().required }}</p>
+    }
+
+    <label for="email">{{ language.ui().yourEmail }}</label>
+    <input id="email" type="email" dir="ltr" formControlName="email" autocomplete="email" [attr.aria-invalid]="showError('email')" />
+    @if (showError('email')) {
+      <p class="error">
+        {{ form.controls.email.value ? language.ui().invalidEmail : language.ui().required }}
+      </p>
+    }
+
+    <label for="subject">{{ language.ui().subject }}</label>
+    <input id="subject" formControlName="subject" [attr.aria-invalid]="showError('subject')" />
+    @if (showError('subject')) {
+      <p class="error">{{ language.ui().required }}</p>
+    }
+
+    <label for="message">{{ language.ui().message }}</label>
+    <textarea id="message" rows="7" formControlName="message" [attr.aria-invalid]="showError('message')"></textarea>
+    @if (showError('message')) {
+      <p class="error">{{ language.ui().required }}</p>
+    }
+
+    <button class="button" type="submit" [disabled]="!site.email"><span>{{ language.ui().send }}</span></button>
+    <p class="hint">{{ language.ui().sendNote }}</p>
+  </form>
+</div>

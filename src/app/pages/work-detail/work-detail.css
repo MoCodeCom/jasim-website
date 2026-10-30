@@ -1,0 +1,54 @@
+.stage {
+  padding: clamp(5rem, 8vw, 6rem) clamp(1rem, 4vw, 3rem) clamp(2rem, 4vw, 3rem);
+  background: var(--ink);
+}
+
+.piece {
+  margin-inline: auto;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+h1 {
+  margin-block-end: 1.25rem;
+  font-size: clamp(2.25rem, 5.5vw, 5rem);
+}
+
+dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.75rem 1.5rem;
+  margin-block: 0 2rem;
+}
+
+dd {
+  margin: 0;
+}
+
+.pager {
+  display: flex;
+  flex-wrap: wrap;
+  grid-column: 1 / -1;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block-start: 1.5rem;
+  border-block-start: 1px solid var(--line);
+}
+
+.pager a {
+  text-decoration: none;
+}
+
+.pager a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+  .info {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

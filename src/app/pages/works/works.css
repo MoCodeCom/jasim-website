@@ -1,0 +1,38 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-block-end: clamp(2rem, 5vw, 3.5rem);
+}
+
+.filters .button:hover {
+  background: var(--mint);
+}
+
+.filters .button[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.wall {
+  columns: 3;
+  column-gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+app-work-card {
+  display: block;
+  margin-block-end: clamp(2rem, 4vw, 3.5rem);
+  break-inside: avoid;
+}
+
+@media (max-width: 900px) {
+  .wall {
+    columns: 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .wall {
+    columns: 1;
+  }
+}

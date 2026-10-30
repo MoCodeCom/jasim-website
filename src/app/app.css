@@ -1,0 +1,135 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.skip {
+  position: absolute;
+  inset-block-start: -4rem;
+  inset-inline-start: 1rem;
+  z-index: 3;
+  padding: 0.5rem 1rem;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.skip:focus {
+  inset-block-start: 0.5rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 2;
+  padding-block: 1rem;
+  color: #ffffff;
+}
+
+.menu-button {
+  display: grid;
+  align-content: center;
+  gap: 7px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.menu-button span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: currentColor;
+}
+
+.brand {
+  text-decoration: none;
+}
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-inline-start: auto;
+  text-decoration: none;
+}
+
+.brand:hover,
+.switch:hover {
+  color: var(--gold);
+}
+
+.menu {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  padding: 1rem 0;
+  border: 0;
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.close {
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.menu nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-block-start: clamp(1.5rem, 5vh, 4rem);
+}
+
+.menu nav a {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 7vw, 5rem);
+  font-weight: 700;
+  letter-spacing: var(--tracking);
+  line-height: 1.15;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menu nav a:hover,
+.menu nav a.active {
+  color: var(--gold);
+}
+
+footer {
+  padding-block: 2.5rem;
+  background: var(--ink);
+  color: #a6a6a6;
+  font-size: 1rem;
+}
+
+footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.5rem;
+}
+
+footer .label {
+  color: #ffffff;
+  text-decoration: none;
+}

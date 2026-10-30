@@ -1,8 +1,22 @@
 import { RenderMode, ServerRoute } from '@angular/ssr';
 
+import { WORKS } from './content/works';
+
+const LANGUAGES = ['en', 'ar'];
+const languageParams = async () => LANGUAGES.map((lang) => ({ lang }));
+
 export const serverRoutes: ServerRoute[] = [
+  { path: '', renderMode: RenderMode.Prerender },
+  { path: ':lang', renderMode: RenderMode.Prerender, getPrerenderParams: languageParams },
+  { path: ':lang/works', renderMode: RenderMode.Prerender, getPrerenderParams: languageParams },
   {
-    path: '**',
-    renderMode: RenderMode.Prerender
-  }
+    path: ':lang/works/:slug',
+    renderMode: RenderMode.Prerender,
+    getPrerenderParams: async () =>
+      LANGUAGES.flatMap((lang) => WORKS.map((work) => ({ lang, slug: work.slug }))),
+  },
+  { path: ':lang/about', renderMode: RenderMode.Prerender, getPrerenderParams: languageParams },
+  { path: ':lang/exhibitions', renderMode: RenderMode.Prerender, getPrerenderParams: languageParams },
+  { path: ':lang/contact', renderMode: RenderMode.Prerender, getPrerenderParams: languageParams },
+  { path: '**', renderMode: RenderMode.Server, status: 404 },
 ];

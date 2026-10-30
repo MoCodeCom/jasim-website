@@ -1,0 +1,24 @@
+<div class="page-head">
+  <div class="wrap">
+    <h1>{{ language.ui().works }}</h1>
+  </div>
+</div>
+
+<div class="wrap page">
+  <div class="filters" role="group" [attr.aria-label]="language.ui().filterLabel">
+    <button class="button" type="button" [attr.aria-pressed]="active() === null" (click)="active.set(null)">
+      {{ language.ui().all }}
+    </button>
+    @for (medium of mediums; track medium) {
+      <button class="button" type="button" [attr.aria-pressed]="active() === medium" (click)="active.set(medium)">
+        {{ language.ui().mediums[medium] }}
+      </button>
+    }
+  </div>
+
+  <div class="wall">
+    @for (work of visible(); track work.slug) {
+      <app-work-card [work]="work" />
+    }
+  </div>
+</div>

@@ -1,0 +1,31 @@
+@if (work().image; as image) {
+  <img
+    [src]="image"
+    [alt]="language.pick(work().title)"
+    [width]="work().width * 100"
+    [height]="work().height * 100"
+    [attr.loading]="eager() ? 'eager' : 'lazy'"
+  />
+} @else {
+  <svg
+    [attr.viewBox]="viewBox()"
+    [attr.preserveAspectRatio]="cover() ? 'xMidYMid slice' : null"
+    role="img"
+    [attr.aria-label]="language.ui().sampleNote"
+  >
+    <rect width="100%" height="100%" fill="#174248" />
+    @for (shape of shapes(); track $index) {
+      <rect
+        [attr.x]="shape.x"
+        [attr.y]="shape.y"
+        [attr.width]="shape.width"
+        [attr.height]="shape.height"
+        [attr.fill]="shape.fill"
+        [attr.opacity]="shape.opacity"
+      />
+    }
+  </svg>
+}
+@if (work().sample) {
+  <span class="tag">{{ language.ui().sample }}</span>
+}

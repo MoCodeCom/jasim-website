@@ -1,0 +1,51 @@
+@if (work(); as work) {
+  <article>
+    <div class="stage">
+      <div class="piece" [style.width]="'min(100%, calc(78vh * ' + work.width / work.height + '))'">
+        <app-artwork [work]="work" [eager]="true" />
+      </div>
+    </div>
+
+    <div class="wrap page info">
+      <div>
+        <h1>{{ language.pick(work.title) }}</h1>
+        @if (work.sample) {
+          <p>{{ language.ui().sampleNote }}</p>
+        }
+        @if (work.description; as description) {
+          <p>{{ language.pick(description) }}</p>
+        }
+      </div>
+
+      <div>
+        <dl>
+          <dt class="label">{{ language.ui().medium }}</dt>
+          <dd>{{ language.ui().mediums[work.medium] }}</dd>
+          @if (work.year; as year) {
+            <dt class="label">{{ language.ui().year }}</dt>
+            <dd>{{ year }}</dd>
+          }
+          @if (work.materials; as materials) {
+            <dt class="label">{{ language.ui().materials }}</dt>
+            <dd>{{ language.pick(materials) }}</dd>
+          }
+          @if (work.dimensions; as dimensions) {
+            <dt class="label">{{ language.ui().dimensions }}</dt>
+            <dd dir="ltr">{{ dimensions }}</dd>
+          }
+        </dl>
+        <a class="button" [routerLink]="language.link('contact')" [queryParams]="{ work: work.slug }">
+          <span>{{ language.ui().enquire }}</span>
+        </a>
+      </div>
+
+      <nav class="pager">
+        <a class="label" [routerLink]="language.link('works', previous().slug)">{{ language.ui().previous }}</a>
+        <a class="label" [routerLink]="language.link('works')">{{ language.ui().backToWorks }}</a>
+        <a class="label" [routerLink]="language.link('works', next().slug)">{{ language.ui().next }}</a>
+      </nav>
+    </div>
+  </article>
+} @else {
+  <app-not-found />
+}
