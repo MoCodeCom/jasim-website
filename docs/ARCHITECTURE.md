@@ -82,6 +82,6 @@ Everything below is in `src/app/content/site.ts` or `works.ts` unless noted.
 - [ ] Replace the descriptive titles and add real titles, materials and dimensions
 - [ ] Add exhibition dates and any missing shows
 - [ ] Set `url` and social links
-- [ ] Add a favicon (`public/favicon.ico`) and a sharing image
+- [ ] Add a sharing image
 - [ ] Set `launched: true` (this removes the `noindex` tag)
 - [ ] Add the production domain to `security.allowedHosts` in `angular.json`
