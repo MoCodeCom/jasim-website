@@ -7,13 +7,26 @@ import { WORKS } from '../../content/works';
 import { Language } from '../../core/language';
 import { Seo } from '../../core/seo';
 
+/** Where the visitor writes the email: their default app, or webmail in a new tab. */
+export type EmailService = 'app' | 'gmail' | 'outlook';
+
 /** Builds the pre-filled email the enquiry form opens. */
 export function enquiryLink(
   to: string[],
   enquiry: { name: string; email: string; subject: string; message: string },
+  service: EmailService = 'app',
 ): string {
-  const body = `${enquiry.message}\n\n${enquiry.name}\n${enquiry.email}`;
-  return `mailto:${to.join(',')}?subject=${encodeURIComponent(enquiry.subject)}&body=${encodeURIComponent(body)}`;
+  const subject = encodeURIComponent(enquiry.subject);
+  const body = encodeURIComponent(`${enquiry.message}\n\n${enquiry.name}\n${enquiry.email}`);
+  const recipients = to.join(',');
+  switch (service) {
+    case 'gmail':
+      return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipients)}&su=${subject}&body=${body}`;
+    case 'outlook':
+      return `https://outlook.live.com/mail/0/deeplink/compose?to=${encodeURIComponent(recipients)}&subject=${subject}&body=${body}`;
+    default:
+      return `mailto:${recipients}?subject=${subject}&body=${body}`;
+  }
 }
 
 @Component({
@@ -58,11 +71,16 @@ export class Contact {
     return control.invalid && control.touched;
   }
 
-  protected submit(): void {
+  protected send(service: EmailService = 'app'): void {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
     }
-    this.doc.location.href = enquiryLink(SITE.emails, this.form.getRawValue());
+    const link = enquiryLink(SITE.emails, this.form.getRawValue(), service);
+    if (service === 'app') {
+      this.doc.location.href = link;
+    } else {
+      this.doc.defaultView?.open(link, '_blank', 'noopener');
+    }
   }
 }

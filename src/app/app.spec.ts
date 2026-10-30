@@ -69,4 +69,17 @@ describe('enquiryLink', () => {
     expect(link).toContain('subject=Hello%26bcc%3Dx%40example.com&body=');
     expect(link).not.toContain('&bcc=');
   });
+
+  it('builds webmail links addressed to every recipient', () => {
+    const enquiry = { name: 'A', email: 'a@example.com', subject: 'S&T', message: 'Hi' };
+    const to = ['first@example.com', 'second@example.com'];
+    const gmail = new URL(enquiryLink(to, enquiry, 'gmail'));
+    expect(gmail.hostname).toBe('mail.google.com');
+    expect(gmail.searchParams.get('to')).toBe(to.join(','));
+    expect(gmail.searchParams.get('su')).toBe('S&T');
+    const outlook = new URL(enquiryLink(to, enquiry, 'outlook'));
+    expect(outlook.hostname).toBe('outlook.live.com');
+    expect(outlook.searchParams.get('to')).toBe(to.join(','));
+    expect(outlook.searchParams.get('subject')).toBe('S&T');
+  });
 });

@@ -11,7 +11,7 @@
     <p class="notice" role="status">{{ language.ui().contactUnavailable }}</p>
   }
 
-  <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+  <form [formGroup]="form" (ngSubmit)="send()" novalidate>
     <label for="name">{{ language.ui().yourName }}</label>
     <input id="name" formControlName="name" autocomplete="name" [attr.aria-invalid]="showError('name')" />
     @if (showError('name')) {
@@ -38,7 +38,11 @@
       <p class="error">{{ language.ui().required }}</p>
     }
 
-    <button class="button" type="submit" [disabled]="!site.emails.length"><span>{{ language.ui().send }}</span></button>
+    <div class="actions">
+      <button class="button" type="submit" [disabled]="!site.emails.length"><span>{{ language.ui().send }}</span></button>
+      <button class="button" type="button" [disabled]="!site.emails.length" (click)="send('gmail')"><span>{{ language.ui().sendGmail }}</span></button>
+      <button class="button" type="button" [disabled]="!site.emails.length" (click)="send('outlook')"><span>{{ language.ui().sendOutlook }}</span></button>
+    </div>
     <p class="hint">{{ language.ui().sendNote }}</p>
   </form>
 </div>
