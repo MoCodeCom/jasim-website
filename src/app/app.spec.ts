@@ -59,12 +59,13 @@ describe('content', () => {
 
 describe('enquiryLink', () => {
   it('encodes the enquiry so its text cannot alter the email fields', () => {
-    const link = enquiryLink('studio@example.com', {
+    const link = enquiryLink(['first@example.com', 'second@example.com'], {
       name: 'A & B',
       email: 'a@example.com',
       subject: 'Hello&bcc=x@example.com',
       message: 'Line one',
     });
+    expect(link.startsWith('mailto:first@example.com,second@example.com?')).toBe(true);
     expect(link).toContain('subject=Hello%26bcc%3Dx%40example.com&body=');
     expect(link).not.toContain('&bcc=');
   });

@@ -12,8 +12,8 @@ export const SITE = {
 
   /** Production address, for example https://example.com (no trailing slash). */
   url: '',
-  /** Address that receives enquiries. The contact form stays disabled until this is set. */
-  email: '',
+  /** Addresses that receive enquiries. The contact form stays disabled while this is empty. */
+  emails: ['mohammed@nema-international.co.uk', 'mohammed.alfadhel.10@gmail.com'],
   /** Keeps the site out of search engines while it holds sample content. */
   launched: false,
 

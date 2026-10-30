@@ -9,11 +9,11 @@ import { Seo } from '../../core/seo';
 
 /** Builds the pre-filled email the enquiry form opens. */
 export function enquiryLink(
-  to: string,
+  to: string[],
   enquiry: { name: string; email: string; subject: string; message: string },
 ): string {
   const body = `${enquiry.message}\n\n${enquiry.name}\n${enquiry.email}`;
-  return `mailto:${to}?subject=${encodeURIComponent(enquiry.subject)}&body=${encodeURIComponent(body)}`;
+  return `mailto:${to.join(',')}?subject=${encodeURIComponent(enquiry.subject)}&body=${encodeURIComponent(body)}`;
 }
 
 @Component({
@@ -63,6 +63,6 @@ export class Contact {
       this.form.markAllAsTouched();
       return;
     }
-    this.doc.location.href = enquiryLink(SITE.email, this.form.getRawValue());
+    this.doc.location.href = enquiryLink(SITE.emails, this.form.getRawValue());
   }
 }

@@ -7,7 +7,7 @@
 <div class="wrap page narrow">
   <p>{{ language.ui().contactIntro }}</p>
 
-  @if (!site.email) {
+  @if (!site.emails.length) {
     <p class="notice" role="status">{{ language.ui().contactUnavailable }}</p>
   }
 
@@ -38,7 +38,7 @@
       <p class="error">{{ language.ui().required }}</p>
     }
 
-    <button class="button" type="submit" [disabled]="!site.email"><span>{{ language.ui().send }}</span></button>
+    <button class="button" type="submit" [disabled]="!site.emails.length"><span>{{ language.ui().send }}</span></button>
     <p class="hint">{{ language.ui().sendNote }}</p>
   </form>
 </div>

@@ -56,7 +56,7 @@ All known URLs are prerendered. Anything else is rendered on the server with a 4
 - **CSS logical properties only** (`margin-inline-start`, not `margin-left`), so Arabic layout
   mirrors without separate styles.
 - **Self-hosted fonts.** No third-party requests, which helps both speed and privacy.
-- **Enquiries through the visitor's email app.** The form opens a pre-filled email, so there is
+- **Enquiries through the visitor's email app.** The form opens a pre-filled email to both addresses in `emails`, so there is
   no mail service, spam store or personal data to look after. If enquiry volume grows, replace
   it with an `/api` endpoint in `src/server.ts`.
 
@@ -81,7 +81,7 @@ Everything below is in `src/app/content/site.ts` or `works.ts` unless noted.
 - [ ] Confirm permission to publish the paintings
 - [ ] Replace the descriptive titles and add real titles, materials and dimensions
 - [ ] Add exhibition dates and any missing shows
-- [ ] Set `email`, `url` and social links
+- [ ] Set `url` and social links
 - [ ] Add a favicon (`public/favicon.ico`) and a sharing image
 - [ ] Set `launched: true` (this removes the `noindex` tag)
 - [ ] Add the production domain to `security.allowedHosts` in `angular.json`
